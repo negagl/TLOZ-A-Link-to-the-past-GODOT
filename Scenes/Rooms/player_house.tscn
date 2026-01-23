@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://v6hqb3ntjq86"]
+[gd_scene load_steps=3 format=3 uid="uid://v6hqb3ntjq86"]
 
+[ext_resource type="PackedScene" uid="uid://r5redlf4b72m" path="res://Scenes/TileMap/tm_house_player.tscn" id="1_bif23"]
 [ext_resource type="PackedScene" uid="uid://brpslj3i2ddn1" path="res://Scenes/Player/player.tscn" id="1_oapy0"]
 
 [node name="PlayerHouse" type="Node2D"]
 
+[node name="TM_HousePlayer" parent="." instance=ExtResource("1_bif23")]
+
 [node name="Player" parent="." instance=ExtResource("1_oapy0")]
 position = Vector2(130, 87)
+speed = 75

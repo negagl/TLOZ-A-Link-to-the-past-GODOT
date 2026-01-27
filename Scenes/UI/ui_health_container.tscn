@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://ngydkrakw385"]
+
+[ext_resource type="Texture2D" uid="uid://cpbe1jt5wgn1s" path="res://Resources/UI/LifeBarEmpty.png" id="1_q0dwr"]
+[ext_resource type="Texture2D" uid="uid://cpsil3inqidvd" path="res://Resources/UI/LifeBarFull.png" id="2_iif5j"]
+
+[node name="UIHealthContainer" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="LifeEmpty" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 8.0
+texture = ExtResource("1_q0dwr")
+stretch_mode = 1
+
+[node name="LifeFull" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 8.0
+texture = ExtResource("2_iif5j")
+stretch_mode = 1

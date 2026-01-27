@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://brpslj3i2ddn1"]
+[gd_scene load_steps=11 format=3 uid="uid://brpslj3i2ddn1"]
 
 [ext_resource type="Script" uid="uid://crf28uw1dakjw" path="res://Scripts/Player/playerController.gd" id="1_a3d8c"]
 [ext_resource type="Texture2D" uid="uid://bmyyb78taawkk" path="res://Resources/Player/PlayerSpritesheet2.png" id="2_a3d8c"]
@@ -111,6 +111,9 @@ _data = {
 &"Walk_Up": SubResource("Animation_dd0ac")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3d8c"]
+size = Vector2(16, 11)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_a3d8c")
 
@@ -126,3 +129,7 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_a3d8c")

@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwd043n3r6ahy"]
+[gd_scene load_steps=6 format=3 uid="uid://cwd043n3r6ahy"]
 
+[ext_resource type="Script" uid="uid://1avii5cuqg7h" path="res://Scripts/UI/uiController.gd" id="1_0uw24"]
 [ext_resource type="PackedScene" uid="uid://cmb2f7wct6b3y" path="res://Scenes/UI/ui_actual_object.tscn" id="1_7g3q6"]
 [ext_resource type="PackedScene" uid="uid://ngydkrakw385" path="res://Scenes/UI/ui_health_container.tscn" id="2_0uw24"]
 [ext_resource type="PackedScene" uid="uid://d2rbo6j70tfi" path="res://Scenes/UI/ui_items.tscn" id="3_r60ow"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0uw24")
 
 [node name="UIActualObject" parent="." instance=ExtResource("1_7g3q6")]
 layout_mode = 0
@@ -25,14 +27,14 @@ offset_top = 8.0
 offset_right = 144.0
 offset_bottom = 16.0
 
+[node name="UIManaBar" parent="." instance=ExtResource("4_6cq3c")]
+layout_mode = 0
+offset_left = 7.0
+offset_right = 23.0
+
 [node name="UIItems" parent="." instance=ExtResource("3_r60ow")]
 layout_mode = 0
 offset_left = 51.0
 offset_top = 4.0
 offset_right = 107.0
 offset_bottom = 20.0
-
-[node name="UIManaBar" parent="." instance=ExtResource("4_6cq3c")]
-layout_mode = 0
-offset_left = 7.0
-offset_right = 23.0

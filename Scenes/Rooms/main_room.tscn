@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdynpvdstqd72"]
+
+[ext_resource type="PackedScene" uid="uid://bxi75sukanupd" path="res://Scenes/Data/data_controller.tscn" id="1_e2jpr"]
+[ext_resource type="PackedScene" uid="uid://v6hqb3ntjq86" path="res://Scenes/Rooms/player_house.tscn" id="2_ld3ea"]
+
+[node name="MainRoom" type="Node2D"]
+
+[node name="DataController" parent="." instance=ExtResource("1_e2jpr")]
+
+[node name="PlayerHouse" parent="." instance=ExtResource("2_ld3ea")]

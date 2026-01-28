@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxv8tscp5p4vw"]
+
+[ext_resource type="Script" uid="uid://csdud5vu7tqlf" path="res://Scripts/Items/RecollectableItem.gd" id="1_byb1i"]
+[ext_resource type="Texture2D" uid="uid://c0st2d5l6ffls" path="res://Resources/Items/Heart.png" id="2_sj2j2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u06jg"]
+radius = 9.0
+
+[node name="RecollectableItem" type="Area2D"]
+script = ExtResource("1_byb1i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_sj2j2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_u06jg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

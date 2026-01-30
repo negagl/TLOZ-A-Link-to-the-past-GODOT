@@ -2,87 +2,73 @@ extends Node
 
 signal dataChange
 
+# -- VARIABLES --
 # Coins
-var coins: int = 0:
-	get:
-		return coins
-	set(value):
-		coins += clamp(value, 1, max_coins)
-		if(coins >= max_coins):
-			coins = max_coins
-		dataChange.emit()
-
-var max_coins: int = 99:
-	get:
-		return max_coins
-	set(value):
-		max_coins = max(value, max_coins)
-		dataChange.emit()
+var coins: int = 0
+var max_coins: int = 99
 
 # Magic
-var magic: int = 50:
-	get:
-		return magic
-	set(value):
-		magic += clamp(value, 1, max_magic)
-		if(magic >= max_magic):
-			magic = max_magic
-		dataChange.emit()
-
-var max_magic: int = 100:
-	get:
-		return max_magic
-	set(value):
-		max_magic = max(value, max_magic)
-		dataChange.emit()
+var magic: int = 50
+var max_magic: int = 100
 
 # Bombs
-var bombs: int = 0:
-	get:
-		return bombs
-	set(value):
-		bombs += clamp(value, 1, max_bombs)
-		if(bombs >= max_bombs):
-			bombs = max_bombs
-		dataChange.emit()
-
-var max_bombs: int = 25:
-	get:
-		return max_bombs
-	set(value):
-		max_bombs = max(value, max_bombs)
-		dataChange.emit()
+var bombs: int = 0
+var max_bombs: int = 25
 
 # Arrows
-var arrows: int = 0:
-	get:
-		return arrows
-	set(value):
-		arrows += clamp(value, 1, max_arrows)
-		if(arrows >= max_arrows):
-			arrows = max_arrows
-		dataChange.emit()
-
-var max_arrows: int = 25:
-	get:
-		return max_arrows
-	set(value):
-		max_arrows = max(value, max_arrows)
-		dataChange.emit()
+var arrows: int = 0
+var max_arrows: int = 25
 
 # Hearts
-var hearts: int = 1:
-	get:
-		return hearts
-	set(value):
-		hearts += clamp(value, 1, max_hearts)
-		if(hearts >= max_hearts):
-			hearts = max_hearts
-		dataChange.emit()
+var hearts: int = 1
+var max_hearts: int = 3
 
-var max_hearts: int = 3:
-	get:
-		return max_hearts
-	set(value):
-		max_hearts = max(value, max_hearts)
-		dataChange.emit()
+# -- FUNCTIONS --
+func add_coins(amount: int) -> void:
+	coins = clamp(coins + amount, 0, max_coins)
+	dataChange.emit()
+
+
+func increase_max_coins(amount: int) -> void:
+	max_coins += amount
+	dataChange.emit()
+
+
+func add_magic(amount: int) -> void:
+	magic = clamp(magic + amount, 0, max_magic)
+	dataChange.emit()
+
+
+func increase_max_magic(amount: int) -> void:
+	max_magic += amount
+	dataChange.emit()
+
+
+func add_bombs(amount: int) -> void:
+	bombs = clamp(bombs + amount, 0, max_bombs)
+	dataChange.emit()
+
+
+func increase_max_bombs(amount: int) -> void:
+	max_bombs += amount
+	dataChange.emit()
+
+
+func add_arrows(amount: int) -> void:
+	arrows = clamp(arrows + amount, 0, max_arrows)
+	dataChange.emit()
+
+
+func increase_max_arrows(amount: int) -> void:
+	max_arrows += amount
+	dataChange.emit()
+
+
+func add_hearts(amount: int) -> void:
+	hearts = clamp(hearts + amount, 0, max_hearts)
+	dataChange.emit()
+
+
+func increase_max_hearts(amount: int) -> void:
+	max_hearts += amount
+	dataChange.emit()

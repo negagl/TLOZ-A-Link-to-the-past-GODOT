@@ -1,34 +1,41 @@
 extends Area2D
 
-@export var idItem: int = 0
+enum ItemType {
+	COIN = 1,
+	MAGIC = 2,
+	BOMB = 3,
+	ARROW = 4,
+	HEART = 5
+}
+
+@export var item_type: ItemType = ItemType.COIN
 @export var value: int = 0
 
 func _ready() -> void:
-	match idItem:
-		1:
+	match item_type:
+		ItemType.COIN:
 			$Sprite2D.texture = preload("res://Resources/Items/Coin.png")
-		2:
+		ItemType.MAGIC:
 			$Sprite2D.texture = preload("res://Resources/Items/Magic.png")
-		3:
+		ItemType.BOMB:
 			$Sprite2D.texture = preload("res://Resources/Items/Bomb.png")
-		4:
+		ItemType.ARROW:
 			$Sprite2D.texture = preload("res://Resources/Items/Arrow.png")
-		5:
+		ItemType.HEART:
 			$Sprite2D.texture = preload("res://Resources/Items/Heart.png")
 
 
 func _on_body_entered(body:Node2D) -> void:
-	var dataNode = get_node("/root/MainRoom/DataController")
 	if (body.name == "Player"):
-		match idItem:
-			1:
-				dataNode.coins = value
-			2:
-				dataNode.magic = value
-			3:
-				dataNode.bombs = value
-			4:
-				dataNode.arrows = value
-			5:
-				dataNode.hearts = value
+		match item_type:
+			ItemType.COIN:
+				GameData.add_coins(value)
+			ItemType.MAGIC:
+				GameData.add_magic(value)
+			ItemType.BOMB:
+				GameData.add_bombs(value)
+			ItemType.ARROW:
+				GameData.add_arrows(value)
+			ItemType.HEART:
+				GameData.add_hearts(value)
 		queue_free()

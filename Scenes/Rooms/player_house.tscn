@@ -1,43 +1,42 @@
-[gd_scene load_steps=5 format=3 uid="uid://v6hqb3ntjq86"]
+[gd_scene format=3 uid="uid://v6hqb3ntjq86"]
 
 [ext_resource type="PackedScene" uid="uid://r5redlf4b72m" path="res://Scenes/TileMap/tm_house_player.tscn" id="1_bif23"]
 [ext_resource type="PackedScene" uid="uid://brpslj3i2ddn1" path="res://Scenes/Player/player.tscn" id="1_oapy0"]
 [ext_resource type="PackedScene" uid="uid://cwd043n3r6ahy" path="res://Scenes/UI/ui_general_group.tscn" id="3_ohuwr"]
 [ext_resource type="PackedScene" uid="uid://dxv8tscp5p4vw" path="res://Scenes/Items/recollectable_item.tscn" id="4_wll7h"]
 
-[node name="PlayerHouse" type="Node2D"]
+[node name="PlayerHouse" type="Node2D" unique_id=1604861718]
 
-[node name="TM_HousePlayer" parent="." instance=ExtResource("1_bif23")]
+[node name="TM_HousePlayer" parent="." unique_id=196494028 instance=ExtResource("1_bif23")]
 
-[node name="Player" parent="." instance=ExtResource("1_oapy0")]
+[node name="Player" parent="." unique_id=913042102 instance=ExtResource("1_oapy0")]
 position = Vector2(130, 87)
 speed = 75
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1025191800]
 
-[node name="UiGeneralGroup" parent="CanvasLayer" instance=ExtResource("3_ohuwr")]
+[node name="UiGeneralGroup" parent="CanvasLayer" unique_id=914650983 instance=ExtResource("3_ohuwr")]
 
-[node name="RecollectableItem" parent="." instance=ExtResource("4_wll7h")]
+[node name="RecollectableItem" parent="." unique_id=1250392342 instance=ExtResource("4_wll7h")]
 position = Vector2(115, 122)
-idItem = 1
 value = 2
 
-[node name="RecollectableItem2" parent="." instance=ExtResource("4_wll7h")]
+[node name="RecollectableItem2" parent="." unique_id=307788516 instance=ExtResource("4_wll7h")]
 position = Vector2(190, 129)
-idItem = 2
+item_type = 2
 value = 10
 
-[node name="RecollectableItem3" parent="." instance=ExtResource("4_wll7h")]
+[node name="RecollectableItem3" parent="." unique_id=70425692 instance=ExtResource("4_wll7h")]
 position = Vector2(142, 170)
-idItem = 3
+item_type = 3
 value = 1
 
-[node name="RecollectableItem4" parent="." instance=ExtResource("4_wll7h")]
+[node name="RecollectableItem4" parent="." unique_id=651750875 instance=ExtResource("4_wll7h")]
 position = Vector2(135, 57)
-idItem = 4
+item_type = 4
 value = 5
 
-[node name="RecollectableItem5" parent="." instance=ExtResource("4_wll7h")]
+[node name="RecollectableItem5" parent="." unique_id=2127313758 instance=ExtResource("4_wll7h")]
 position = Vector2(68, 116)
-idItem = 5
+item_type = 5
 value = 1
